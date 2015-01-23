@@ -1,0 +1,21 @@
+# LAYER_CONF_VERSION is increased each time build/conf/bblayers.conf
+# changes incompatibly
+LCONF_VERSION = "6"
+
+BBPATH = "${TOPDIR}"
+BBFILES ?= ""
+
+BBLAYERS ?= " \
+  ##OEROOT##/poky/meta \
+  ##OEROOT##/meta-multimedia \
+  ##OEROOT##/meta-fsl-arm \
+  ##OEROOT##/meta-fsl-arm-extra \
+  ##OEROOT##/meta-fsl-demos \
+  ##OEROOT##/meta-magos \
+  "
+
+BBLAYERS_NON_REMOVABLE ?= " \
+  ##OEROOT##/poky/meta \
+  ##OEROOT##/meta-magos \
+  "
+

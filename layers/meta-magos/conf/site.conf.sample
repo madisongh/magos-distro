@@ -1,0 +1,27 @@
+SCONF_VERSION = "1"
+ACCEPT_FSL_EULA = "1"
+
+MN_MIRRORPATH ?= "file:///archive/distros/${DISTRO}"
+SSTATE_MIRRORDIR ?= "${MN_MIRRORPATH}/sstate_mirror"
+DOWNLOADS_MIRRORDIR ?= "${MN_MIRRORPATH}/downloads"
+
+SSTATE_MIRRORS ?= "\
+file://.* ${SSTATE_MIRRORDIR}/PATH"
+
+PREMIRRORS = "\
+ftp://.*/.*   ${DOWNLOADS_MIRRORDIR}/ \n \
+http://.*/.*  ${DOWNLOADS_MIRRORDIR}/ \n \
+https://.*/.* ${DOWNLOADS_MIRRORDIR}/ \n \
+bzr://.*/.*   ${DOWNLOADS_MIRRORDIR}/ \n \
+cvs://.*/.*   ${DOWNLOADS_MIRRORDIR}/ \n \
+git://.*/.*   ${DOWNLOADS_MIRRORDIR}/ \n \
+hg://.*/.*    ${DOWNLOADS_MIRRORDIR}/ \n \
+osc://.*/.*   ${DOWNLOADS_MIRRORDIR}/ \n \
+p4://.*/.*    ${DOWNLOADS_MIRRORDIR}/ \n \
+svk://.*/.*   ${DOWNLOADS_MIRRORDIR}/ \n \
+svn://.*/.*   ${DOWNLOADS_MIRRORDIR}/ \n"
+
+MIRRORS =+ "\
+ftp://.*/.*      ${DOWNLOADS_MIRRORDIR}/ \n \
+http://.*/.*     ${DOWNLOADS_MIRRORDIR}/ \n \
+https://.*/.*    ${DOWNLOADS_MIRRORDIR}/ \n"
