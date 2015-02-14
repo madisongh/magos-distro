@@ -9,4 +9,5 @@ CORE_IMAGE_EXTRA_INSTALL = "\
     dosfstools \
     e2fsprogs \
     parted \
+    util-linux \
     "
