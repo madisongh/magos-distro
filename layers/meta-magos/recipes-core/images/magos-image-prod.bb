@@ -2,7 +2,7 @@ SUMMARY = "MagOS image for production"
 
 LICENSE = "MIT"
 
-IMAGE_FEATURES += "ssh-server-dropbear"
+IMAGE_FEATURES += "ssh-server-dropbear package-management"
 
 IMAGE_INSTALL = " \
     packagegroup-magos-base \
