@@ -8,7 +8,6 @@ IMAGE_INSTALL = " \
     packagegroup-magos-base \
     packagegroup-magos-mmctools \
     packagegroup-core-full-cmdline \
-    packagegroup-core-lsb \
 "
 
 IMAGE_LINGUAS = " "
