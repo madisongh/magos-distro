@@ -1,3 +1,3 @@
-FILESEXTRAPATHS_prepend := "${THISDIR}/u-boot-fslc-2015.01:"
-
-SRC_URI += "file://quietboot.patch"
+SRCREV = "${AUTOREV}"
+SRCBRANCH = "magos-dev"
+SRC_URI = "git://github.com/madisongh/u-boot-fslc.git;branch=${SRCBRANCH}"
