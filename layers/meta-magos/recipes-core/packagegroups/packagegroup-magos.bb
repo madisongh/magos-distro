@@ -31,6 +31,7 @@ RDEPENDS_packagegroup-magos-support = " \
         lsbinitscripts \
 	openssh \
 	tzcode \
+	usbutils \
 "
 
 RDEPENDS_packagegroup-magos-buildtools = "\
