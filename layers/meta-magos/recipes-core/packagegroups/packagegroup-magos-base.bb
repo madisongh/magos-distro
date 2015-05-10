@@ -9,4 +9,6 @@ inherit packagegroup
 RDEPENDS_${PN} = " \
         packagegroup-core-boot \
         packagegroup-base-extended \
+        wireless-tools \
+        wpa-supplicant \
 "
