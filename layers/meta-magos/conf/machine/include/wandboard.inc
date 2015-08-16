@@ -10,3 +10,6 @@ MACHINE_FEATURES += "pci touchscreen"
 KERNEL_IMAGETYPE = "zImage"
 
 UBOOT_MACHINE = "wandboard_config"
+SPL_BINARY = "SPL"
+UBOOT_MAKE_TARGET = ""
+UBOOT_SUFFIX = "img"
