@@ -4,6 +4,8 @@ LICENSE = "MIT"
 
 IMAGE_FEATURES += "ssh-server-dropbear package-management hwcodecs"
 
+IMAGE_FSTYPES = "sdcard"
+
 IMAGE_INSTALL = " \
     packagegroup-magos-base \
     packagegroup-magos-mmctools \
