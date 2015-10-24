@@ -1,0 +1,10 @@
+LINUX_VERSION = "3.14-1.0.x"
+FILESEXTRAPATHS_prepend := "${THISDIR}/${BPN}-${LINUX_VERSION}:"
+WANDBOARD_GITHUB_MIRROR ?= "git://github.com/madisongh/linux"
+SRC_URI = "${WANDBOARD_GITHUB_MIRROR};branch=${SRCBRANCH} \
+	   file://defconfig"
+PV = "${LINUX_VERSION}+git${SRCPV}"
+SRCREV = "${AUTOREV}"
+SRCBRANCH = "wandboard_3.14-1.0.x-mx6"
+COMPATIBLE_MACHINE="(wandboard-.*)"
+LOCALVERSION = "-wandboard"
