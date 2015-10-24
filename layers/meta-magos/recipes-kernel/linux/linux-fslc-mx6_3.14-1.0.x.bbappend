@@ -6,5 +6,5 @@ SRC_URI = "${WANDBOARD_GITHUB_MIRROR};branch=${SRCBRANCH} \
 PV = "${LINUX_VERSION}+git${SRCPV}"
 SRCREV = "${AUTOREV}"
 SRCBRANCH = "wandboard_3.14-1.1.x-imx"
-COMPATIBLE_MACHINE="(wandboard-.*)"
+COMPATIBLE_MACHINE="(wandboard)"
 LOCALVERSION = "-wandboard"

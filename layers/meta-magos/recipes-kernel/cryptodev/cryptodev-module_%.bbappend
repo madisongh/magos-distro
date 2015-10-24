@@ -1,1 +1,1 @@
-KERNEL_MODULE_AUTOLOAD_append_wandboard-quad = " cryptodev"
+KERNEL_MODULE_AUTOLOAD_append_wandboard = " cryptodev"
