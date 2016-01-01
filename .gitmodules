@@ -6,7 +6,7 @@
 	path = repos/meta-openembedded
 	url = git://git.openembedded.org/meta-openembedded
 	branch = jethro
-[submodule "repos/meta-freescale"]
-	path = repos/meta-freescale
-	url = git://github.com/Freescale/meta-freescale
-	branch = master
+[submodule "repos/meta-fsl-arm"]
+	path = repos/meta-fsl-arm
+	url = git://git.yoctoproject.org/meta-fsl-arm
+	branch = jethro
