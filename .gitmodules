@@ -10,3 +10,6 @@
 	path = repos/meta-freescale
 	url = git://github.com/Freescale/meta-freescale
 	branch = master
+[submodule "repos/meta-tegra"]
+	path = repos/meta-tegra
+	url = https://github.com/madisongh/meta-tegra
