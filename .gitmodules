@@ -10,3 +10,6 @@
 	path = repos/meta-fsl-arm
 	url = git://git.yoctoproject.org/meta-fsl-arm
 	branch = jethro
+[submodule "repos/meta-tegra"]
+	path = repos/meta-tegra
+	url = git://github.com/madisongh/meta-tegra

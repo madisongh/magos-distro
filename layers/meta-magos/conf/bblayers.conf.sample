@@ -9,6 +9,7 @@ BBLAYERS ?= " \
   ##OEROOT##/poky/meta \
   ##OEROOT##/meta-multimedia \
   ##OEROOT##/meta-fsl-arm \
+  ##OEROOT##/meta-tegra \
   ##OEROOT##/meta-magos \
   "
 
