@@ -36,6 +36,7 @@ PARALLEL_MAKE ?= "-j ${@oe.utils.cpu_count()}"
 #
 # Machine Selection
 #
+#MACHINE ?= "jetson-tx1"
 #MACHINE ?= "wandboard"
 # This sets the default machine if no other machine is selected:
 MACHINE ??= "wandboard"

@@ -1,7 +1,6 @@
 Supported MACHINEs:
-    wandboard-solo
-    wandboard-dual
-    wandboard-quad (default)
+    jetson-tx1
+    wandboard (default)
 
 Common targets are:
     magos-image-base
