@@ -13,3 +13,4 @@
 [submodule "repos/meta-tegra"]
 	path = repos/meta-tegra
 	url = git://github.com/madisongh/meta-tegra
+	branch = jethro
