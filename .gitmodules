@@ -5,10 +5,10 @@
 	path = repos/meta-openembedded
 	url = git://git.openembedded.org/meta-openembedded
 	branch = master
-[submodule "repos/meta-freescale"]
-	path = repos/meta-freescale
-	url = git://github.com/Freescale/meta-freescale
-	branch = master
 [submodule "repos/meta-tegra"]
 	path = repos/meta-tegra
 	url = https://github.com/madisongh/meta-tegra
+[submodule "repos/meta-fsl-arm"]
+	path = repos/meta-fsl-arm
+	url = git://github.com/Freescale/meta-fsl-arm
+	branch = master-next
