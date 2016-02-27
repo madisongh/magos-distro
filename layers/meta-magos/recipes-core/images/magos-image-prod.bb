@@ -20,3 +20,5 @@ IMAGE_INSTALL = " \
 IMAGE_LINGUAS = " "
 
 inherit core-image
+
+EXTRA_IMAGECMD_append_ext4 = " -O ^flex_bg"
