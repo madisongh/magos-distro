@@ -17,3 +17,5 @@ _generate_boot_image_append() {
     mcopy -i ${WORKDIR}/boot.img -s ${IMAGE_ROOTFS}/boot/extlinux ::/
 }
 inherit core-image
+
+EXTRA_IMAGECMD_append_ext4 = " -O ^flex_bg"
