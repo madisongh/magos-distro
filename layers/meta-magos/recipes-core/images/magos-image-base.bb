@@ -18,4 +18,4 @@ _generate_boot_image_append() {
 }
 inherit core-image
 
-EXTRA_IMAGECMD_append_ext4 = " -O ^flex_bg"
+EXTRA_IMAGECMD_append_ext4 = " -O ^flex_bg,^metadata_csum,^64bit,^extra_isize"
