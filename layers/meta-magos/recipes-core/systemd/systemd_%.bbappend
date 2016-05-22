@@ -1,0 +1,6 @@
+FILESEXTRAPATHS_prepend := "${THISDIR}/${BPN}:"
+SRC_URI_append_jetson-tx1 = " file://avoid-getrandom-on-old-kernels.patch"
+TARGET_CFLAGS_append_jetson-tx1 = " -DAVOID_GETRANDOM"
+FILES_${PN}-pam = "${base_libdir}/security"
+RRECOMMENDS_${PN} += "${PN}-pam"
+RRECOMMENDS_udev += "udev-hwdb"
