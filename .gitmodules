@@ -9,6 +9,7 @@
 [submodule "repos/meta-tegra"]
 	path = repos/meta-tegra
 	url = https://github.com/madisongh/meta-tegra
+	branch = krogoth
 [submodule "repos/meta-fsl-arm"]
 	path = repos/meta-fsl-arm
 	url = git://github.com/Freescale/meta-fsl-arm
