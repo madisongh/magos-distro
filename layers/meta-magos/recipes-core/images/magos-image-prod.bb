@@ -7,7 +7,7 @@ IMAGE_FEATURES += "ssh-server-dropbear package-management hwcodecs"
 IMAGE_FSTYPES = "sdcard"
 
 MAGOS_GRAPHICS ?= "packagegroup-magos-graphics"
-MAGOS_GRAPHICS_jetson-tx1 = "lib32-packagegroup-magos-graphics lib32-nvgstplayer lib32-nvgstcapture lib32-gstreamer1.0-plugins-bad-faad"
+MAGOS_GRAPHICS_jetson-tx1 = "packagegroup-magos-graphics nvgstplayer nvgstcapture gstreamer1.0-plugins-bad-faad"
 
 IMAGE_INSTALL = " \
     packagegroup-magos-base \
