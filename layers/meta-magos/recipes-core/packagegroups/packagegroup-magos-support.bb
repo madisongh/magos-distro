@@ -13,4 +13,5 @@ RDEPENDS_${PN} = " \
 	openssh \
 	tzcode \
 	usbutils \
+	v4l-utils \
 "
