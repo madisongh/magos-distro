@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/arm 4.1.22 Kernel Configuration
+# Linux/arm 4.1.25 Kernel Configuration
 #
 CONFIG_ARM=y
 CONFIG_ARM_HAS_SG_CHAIN=y
@@ -326,6 +326,7 @@ CONFIG_HAVE_IMX_ANATOP=y
 CONFIG_HAVE_IMX_GPC=y
 CONFIG_HAVE_IMX_MMDC=y
 CONFIG_HAVE_IMX_AMP=y
+CONFIG_HAVE_IMX_MU=y
 CONFIG_HAVE_IMX_RPMSG=y
 CONFIG_HAVE_IMX_SRC=y
 
@@ -2857,6 +2858,11 @@ CONFIG_MXC_IPU_V3=y
 # CONFIG_MXC_IPU_V3_PRE is not set
 
 #
+# MXC Vivante GPU support
+#
+# CONFIG_MXC_GPU_VIV is not set
+
+#
 # MXC SIM Support
 #
 # CONFIG_MXC_SIM is not set
@@ -2877,7 +2883,6 @@ CONFIG_MXC_VPU=y
 # MXC HDMI CEC (Consumer Electronics Control) support
 #
 CONFIG_MXC_HDMI_CEC=y
-# CONFIG_MXC_GPU_VIV is not set
 CONFIG_NEW_LEDS=y
 CONFIG_LEDS_CLASS=y
 # CONFIG_LEDS_CLASS_FLASH is not set
