@@ -7,9 +7,9 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 inherit packagegroup
 
 RDEPENDS_${PN} = " \
-    ${@base_contains('DISTRO_FEATURES', 'wayland', 'weston weston-init weston-examples gtk+3-demo', '', d)} \
-    ${@base_contains('DISTRO_FEATURES', 'directfb', 'packagegroup-core-directfb', '', d)} \
-    ${@base_contains('DISTRO_FEATURES', 'x11', 'packagegroup-core-x11-base', '', d)} \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'wayland', 'weston weston-init weston-examples gtk+3-demo', '', d)} \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'directfb', 'packagegroup-core-directfb', '', d)} \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'x11', 'packagegroup-core-x11-base', '', d)} \
     ${MACHINE_GSTREAMER_1_0_PLUGIN} \
     gstreamer1.0-plugins-base-meta \
     gstreamer1.0-plugins-good-meta \
