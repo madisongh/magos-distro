@@ -25,3 +25,5 @@ EOF
 }
 
 FILES_kernel-image += "/${KERNEL_IMAGEDEST}/extlinux"
+
+do_preconfigure[dirs] = "${B}"
