@@ -5,6 +5,7 @@ LICENSE = "MIT"
 IMAGE_FEATURES += "ssh-server-dropbear package-management hwcodecs"
 
 IMAGE_FSTYPES = "sdcard"
+IMAGE_FSTYPES_append_jetson-tx1 = " tegraflash"
 
 MAGOS_GRAPHICS ?= "packagegroup-magos-graphics"
 MAGOS_GRAPHICS_jetson-tx1 = "packagegroup-magos-graphics nvgstplayer nvgstcapture gstreamer1.0-plugins-bad-faad"
