@@ -9,6 +9,5 @@ inherit packagegroup
 RDEPENDS_${PN} = " \
         mmc-utils \
         mtd-utils \
-	packagegroup-base-vfat \
         parted \
 "
