@@ -1,1 +1,2 @@
-PACKAGECONFIG_append_jetson-tx1 = " faad"
+PACKAGECONFIG_append_tegra210 = " faad"
+PACKAGE_ARCH_tegra210 = "${SOC_FAMILY_ARCH}"
