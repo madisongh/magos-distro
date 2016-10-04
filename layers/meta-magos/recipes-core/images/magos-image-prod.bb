@@ -8,7 +8,8 @@ IMAGE_FSTYPES = "sdcard"
 IMAGE_FSTYPES_append_jetson-tx1 = " tegraflash"
 
 MAGOS_GRAPHICS ?= "packagegroup-magos-graphics"
-MAGOS_GRAPHICS_jetson-tx1 = "packagegroup-magos-graphics nvgstplayer nvgstcapture gstreamer1.0-plugins-bad-faad"
+MAGOS_GRAPHICS_jetson-tx1 = "packagegroup-magos-graphics nvgstplayer nvgstcapture gstreamer1.0-plugins-bad-faad \
+                             tegra-mmapi-samples"
 
 IMAGE_INSTALL = " \
     packagegroup-magos-base \
