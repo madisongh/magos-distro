@@ -11,6 +11,7 @@ RDEPENDS_${PN} = " \
         lsb \
         lsbinitscripts \
 	openssh \
+	strace \
 	tzcode \
 	usbutils \
 	v4l-utils \
