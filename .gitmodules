@@ -1,15 +1,15 @@
 [submodule "poky"]
 	path = repos/poky
 	url = git://github.com/madisongh/poky
-	branch = master
+	branch = morty
 [submodule "meta-openembedded"]
 	path = repos/meta-openembedded
 	url = git://git.openembedded.org/meta-openembedded
-	branch = master
+	branch = morty
 [submodule "repos/meta-tegra"]
 	path = repos/meta-tegra
 	url = https://github.com/madisongh/meta-tegra
-	branch = master
+	branch = morty
 [submodule "repos/meta-fsl-arm"]
 	path = repos/meta-fsl-arm
 	url = git://github.com/Freescale/meta-fsl-arm
