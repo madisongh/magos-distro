@@ -6,6 +6,9 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 inherit packagegroup
 
+MACHINE_GSTREAMER_1_0_PLUGIN ??= ""
+MACHINE_HWCODECS ??= ""
+
 RDEPENDS_${PN} = " \
     ${@bb.utils.contains('DISTRO_FEATURES', 'wayland', 'weston weston-init weston-examples gtk+3-demo', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'directfb', 'packagegroup-core-directfb', '', d)} \
