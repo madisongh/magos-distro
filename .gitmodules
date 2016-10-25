@@ -14,3 +14,6 @@
 	path = repos/meta-fsl-arm
 	url = git://github.com/Freescale/meta-fsl-arm
 	branch = master
+[submodule "repos/meta-freescale"]
+	path = repos/meta-freescale
+	url = https://github.com/Freescale/meta-freescale

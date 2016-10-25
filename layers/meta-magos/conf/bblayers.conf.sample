@@ -8,7 +8,7 @@ BBFILES ?= ""
 BBLAYERS ?= " \
   ##OEROOT##/poky/meta \
   ##OEROOT##/meta-multimedia \
-  ##OEROOT##/meta-fsl-arm \
+  ##OEROOT##/meta-freescale \
   ##OEROOT##/meta-tegra \
   ##OEROOT##/meta-magos \
   "
