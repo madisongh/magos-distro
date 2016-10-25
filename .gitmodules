@@ -10,10 +10,6 @@
 	path = repos/meta-tegra
 	url = https://github.com/madisongh/meta-tegra
 	branch = morty
-[submodule "repos/meta-fsl-arm"]
-	path = repos/meta-fsl-arm
-	url = git://github.com/Freescale/meta-fsl-arm
-	branch = master
 [submodule "repos/meta-freescale"]
 	path = repos/meta-freescale
 	url = https://github.com/Freescale/meta-freescale
