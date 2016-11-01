@@ -13,3 +13,4 @@
 [submodule "repos/meta-freescale"]
 	path = repos/meta-freescale
 	url = https://github.com/Freescale/meta-freescale
+	branch = morty
