@@ -2,10 +2,10 @@ DESCRIPTION = "NVIDIA Tegra Multimedia API headers and examples"
 HOMEPAGE = "http://developer.nvidia.com"
 LICENSE = "Proprietary & BSD"
 
-SRC_URI = "http://developer.download.nvidia.com/devzone/devcenter/mobile/jetpack_l4t/008/linux-x64/Tegra_Multimedia_API_R${PV}_aarch64.tbz2 \
+SRC_URI = "http://developer.download.nvidia.com/devzone/devcenter/mobile/jetpack_l4t/010/linux-x64/Tegra_Multimedia_API_R${PV}_aarch64.tbz2 \
 	   file://make-x11-conditional.patch"
-SRC_URI[md5sum] = "40b21c3ab7658e6f384dda4ab03d2abb"
-SRC_URI[sha256sum] = "5202bac00d542344a2e00f3647505406c01c7f4dfa649661f41b41b7f275616f"
+SRC_URI[md5sum] = "a04036ea71e030be39950b297fbaa69b"
+SRC_URI[sha256sum] = "c57d6535f135261cc5ff9c48114381d65ad437d80fbf7ad0a22373f60c14d0f0"
 
 COMPATIBLE_MACHINE = "(tegra210)"
 PACKAGE_ARCH = "${SOC_FAMILY_PKGARCH}"
@@ -30,7 +30,7 @@ EXTRA_OECMAKE = "-DMULTIPROCESS=ON \
 
 do_configure() {
     rm -rf ${S}/include
-    #sed -i -e's,\(samples/11\),#\1,' ${S}/Makefile
+    #sed -i -e's,\(samples/04\),#\1,' ${S}/Makefile
     find samples -name 'Makefile' -exec sed -i -e's,^LDFLAGS,NVLDFLAGS,' -e's,\$(LDFLAGS),$(LDFLAGS) $(NVLDFLAGS),' {} \;
     cd ${OECMAKE_SOURCEPATH}
     cmake_do_configure
@@ -41,7 +41,7 @@ do_compile() {
     CPP=`echo ${CXX} | sed -e's, .*,,'`
     CXX_EXTRA=`echo ${CXX} | sed -e's,^[^ ]*,,'`
     oe_runmake -j1 -e all TEGRA_ARMABI=${TARGET_ARCH} TARGET_ROOTFS=${STAGING_DIR_TARGET} CUDA_PATH=${STAGING_DIR_NATIVE}/usr/local/cuda-8.0 \
-                      CPPFLAGS="${CXX_EXTRA} ${CXXFLAGS} -std=c++11 -I${STAGING_INCDIR}/libjpeg-8b-tegra -I${STAGING_DIR_TARGET}/usr/local/cuda-8.0/include -I${S}/samples/common/algorithm/cuda -I${S}/argus/samples/utils" NVCCFLAGS="--shared --std=c++11" LDFLAGS="-L${STAGING_DIR_TARGET}/usr/local/cuda-8.0/lib ${LDFLAGS}" CFLAGS="${CFLAGS} `pkg-config --cflags opencv`"
+                      CPPFLAGS="${CXX_EXTRA} ${CXXFLAGS} -std=c++11 -I${STAGING_INCDIR}/libjpeg-8b-tegra -I${STAGING_DIR_TARGET}/usr/local/cuda-8.0/include -I${S}/samples/common/algorithm/cuda -I${S}/samples/common/algorithm/gie -I${S}/argus/samples/utils" NVCCFLAGS="--shared --std=c++11" LDFLAGS="-L${STAGING_DIR_TARGET}/usr/local/cuda-8.0/lib ${LDFLAGS}" CFLAGS="${CFLAGS} `pkg-config --cflags opencv`"
 }
 
 do_install() {
