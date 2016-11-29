@@ -3,7 +3,9 @@ HOMEPAGE = "http://developer.nvidia.com"
 LICENSE = "Proprietary & BSD"
 
 SRC_URI = "http://developer.download.nvidia.com/devzone/devcenter/mobile/jetpack_l4t/010/linux-x64/Tegra_Multimedia_API_R${PV}_aarch64.tbz2 \
-	   file://make-x11-conditional.patch"
+	   file://make-x11-conditional.patch \
+	   file://fix-broken-tools-makefile.patch \
+"
 SRC_URI[md5sum] = "a04036ea71e030be39950b297fbaa69b"
 SRC_URI[sha256sum] = "c57d6535f135261cc5ff9c48114381d65ad437d80fbf7ad0a22373f60c14d0f0"
 
