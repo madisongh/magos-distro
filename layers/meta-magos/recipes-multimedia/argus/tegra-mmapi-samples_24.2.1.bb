@@ -2,10 +2,12 @@ DESCRIPTION = "NVIDIA Tegra Multimedia API headers and examples"
 HOMEPAGE = "http://developer.nvidia.com"
 LICENSE = "Proprietary & BSD"
 
-SRC_URI = "http://developer.download.nvidia.com/devzone/devcenter/mobile/jetpack_l4t/007/linux-x64/Tegra_Multimedia_API_R${PV}_aarch64.tbz2 \
-	   file://make-x11-conditional.patch"
-SRC_URI[md5sum] = "d27734a6fbc0aecdddda82ebe605c0c6"
-SRC_URI[sha256sum] = "2198ddd1d5217faf4634826aefd70ad80023fa94f0f2f26e89f5badd68295730"
+SRC_URI = "http://developer.download.nvidia.com/devzone/devcenter/mobile/jetpack_l4t/010/linux-x64/Tegra_Multimedia_API_R${PV}_aarch64.tbz2 \
+	   file://make-x11-conditional.patch \
+           file://fix-tools-makefile.patch \
+"
+SRC_URI[md5sum] = "a04036ea71e030be39950b297fbaa69b"
+SRC_URI[sha256sum] = "c57d6535f135261cc5ff9c48114381d65ad437d80fbf7ad0a22373f60c14d0f0"
 
 COMPATIBLE_MACHINE = "(tegra210)"
 PACKAGE_ARCH = "${SOC_FAMILY_PKGARCH}"

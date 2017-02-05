@@ -1,8 +1,8 @@
 Index: tegra_multimedia_api/argus/samples/utils/CMakeLists.txt
 ===================================================================
---- tegra_multimedia_api.orig/argus/samples/utils/CMakeLists.txt	2016-09-08 13:59:47.000000000 -0700
-+++ tegra_multimedia_api/argus/samples/utils/CMakeLists.txt	2016-09-30 11:14:12.864852326 -0700
-@@ -33,11 +33,15 @@
+--- tegra_multimedia_api.orig/argus/samples/utils/CMakeLists.txt
++++ tegra_multimedia_api/argus/samples/utils/CMakeLists.txt
+@@ -33,11 +33,15 @@ set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DI
  find_package(Argus REQUIRED)
  find_package(OpenGLES REQUIRED)
  find_package(EGL REQUIRED)
@@ -20,7 +20,7 @@ Index: tegra_multimedia_api/argus/samples/utils/CMakeLists.txt
  
  set(SOURCES
      EGLGlobal.cpp
-@@ -47,10 +51,19 @@
+@@ -47,10 +51,19 @@ set(SOURCES
      PreviewConsumer.cpp
      Thread.cpp
      WindowBase.cpp
@@ -44,9 +44,9 @@ Index: tegra_multimedia_api/argus/samples/utils/CMakeLists.txt
          ${SOURCES}
 Index: tegra_multimedia_api/argus/samples/utils/EGLGlobal.cpp
 ===================================================================
---- tegra_multimedia_api.orig/argus/samples/utils/EGLGlobal.cpp	2016-09-08 13:59:47.000000000 -0700
-+++ tegra_multimedia_api/argus/samples/utils/EGLGlobal.cpp	2016-09-30 11:11:10.052264190 -0700
-@@ -127,6 +127,7 @@
+--- tegra_multimedia_api.orig/argus/samples/utils/EGLGlobal.cpp
++++ tegra_multimedia_api/argus/samples/utils/EGLGlobal.cpp
+@@ -136,6 +136,7 @@ bool EGLDisplayHolder::initialize(EGLNat
  
  bool EGLDisplayHolder::cleanup()
  {
@@ -54,7 +54,7 @@ Index: tegra_multimedia_api/argus/samples/utils/EGLGlobal.cpp
      if (m_display != EGL_NO_DISPLAY)
      {
          // inform the window that the display is gone
-@@ -137,7 +138,7 @@
+@@ -146,7 +147,7 @@ bool EGLDisplayHolder::cleanup()
              REPORT_ERROR("eglTerminate failed (error 0x%04x)", eglGetError());
          m_display = EGL_NO_DISPLAY;
      }
@@ -65,8 +65,8 @@ Index: tegra_multimedia_api/argus/samples/utils/EGLGlobal.cpp
  
 Index: tegra_multimedia_api/argus/samples/utils/Window.h
 ===================================================================
---- tegra_multimedia_api.orig/argus/samples/utils/Window.h	2016-09-08 13:59:47.000000000 -0700
-+++ tegra_multimedia_api/argus/samples/utils/Window.h	2016-09-30 11:13:56.500800747 -0700
+--- tegra_multimedia_api.orig/argus/samples/utils/Window.h
++++ tegra_multimedia_api/argus/samples/utils/Window.h
 @@ -30,6 +30,35 @@
  #include "android/Window.h"
  #elif defined(SAMPLE_USE_GLX)
@@ -105,23 +105,23 @@ Index: tegra_multimedia_api/argus/samples/utils/Window.h
  #endif
 Index: tegra_multimedia_api/argus/CMakeLists.txt
 ===================================================================
---- tegra_multimedia_api.orig/argus/CMakeLists.txt	2016-09-08 13:59:47.000000000 -0700
-+++ tegra_multimedia_api/argus/CMakeLists.txt	2016-09-30 11:11:10.052264190 -0700
+--- tegra_multimedia_api.orig/argus/CMakeLists.txt
++++ tegra_multimedia_api/argus/CMakeLists.txt
 @@ -26,7 +26,9 @@
  
  cmake_minimum_required (VERSION 2.6)
  
 -add_subdirectory(apps/camera)
 +if(WITH_X11)
-+    add_subdirectory(apps/camera)
++  add_subdirectory(apps/camera)
 +endif(WITH_X11)
+ add_subdirectory(samples/bayerAverageMap)
  add_subdirectory(samples/cudaHistogram)
- add_subdirectory(samples/facedetect)
- add_subdirectory(samples/gstVideoEncode)
+ add_subdirectory(samples/denoise)
 Index: tegra_multimedia_api/argus/samples/utils/WindowNoGui.cpp
 ===================================================================
---- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ tegra_multimedia_api/argus/samples/utils/WindowNoGui.cpp	2016-09-30 11:13:31.872722757 -0700
+--- /dev/null
++++ tegra_multimedia_api/argus/samples/utils/WindowNoGui.cpp
 @@ -0,0 +1,17 @@
 +#include "Window.h"
 +
