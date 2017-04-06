@@ -5,6 +5,7 @@ LICENSE = "Proprietary & BSD"
 SRC_URI = "http://developer.download.nvidia.com/devzone/devcenter/mobile/jetpack_l4t/010/linux-x64/Tegra_Multimedia_API_R${PV}_aarch64.tbz2 \
 	   file://make-x11-conditional.patch \
            file://fix-tools-makefile.patch \
+           file://remove-xxd-reference.patch \
 "
 SRC_URI[md5sum] = "a04036ea71e030be39950b297fbaa69b"
 SRC_URI[sha256sum] = "c57d6535f135261cc5ff9c48114381d65ad437d80fbf7ad0a22373f60c14d0f0"
@@ -12,7 +13,7 @@ SRC_URI[sha256sum] = "c57d6535f135261cc5ff9c48114381d65ad437d80fbf7ad0a22373f60c
 COMPATIBLE_MACHINE = "(tegra210)"
 PACKAGE_ARCH = "${SOC_FAMILY_PKGARCH}"
 
-DEPENDS = "tegra-mmapi tegra-libraries virtual/egl virtual/libgles1 virtual/libgles2 jpeg expat gstreamer1.0 glib-2.0 v4l-utils tensorrt opencv"
+DEPENDS = "tegra-mmapi tegra-libraries virtual/egl virtual/libgles1 virtual/libgles2 jpeg expat gstreamer1.0 glib-2.0 v4l-utils tensorrt opencv coreutils-native"
 
 LIC_FILES_CHKSUM = "file://LICENSE;md5=60ad17cc726658e8cf73578bea47b85f \
 		    file://argus/LICENSE.TXT;md5=271791ce6ff6f928d44a848145021687"
