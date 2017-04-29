@@ -12,4 +12,4 @@
 	branch = master
 [submodule "repos/meta-freescale"]
 	path = repos/meta-freescale
-	url = https://github.com/Freescale/meta-freescale
+	url = https://github.com/madisongh/meta-freescale
