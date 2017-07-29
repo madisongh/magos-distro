@@ -9,7 +9,7 @@
 [submodule "repos/meta-tegra"]
 	path = repos/meta-tegra
 	url = https://github.com/madisongh/meta-tegra
-	branch = pyro
+	branch = wip-pyro-l4t-r28.1
 [submodule "repos/meta-freescale"]
 	path = repos/meta-freescale
 	url = https://github.com/madisongh/meta-freescale
