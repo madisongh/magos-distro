@@ -6,9 +6,12 @@ IMAGE_FEATURES += "ssh-server-dropbear package-management hwcodecs"
 
 IMAGE_FSTYPES = "sdcard"
 IMAGE_FSTYPES_append_jetson-tx1 = " tegraflash"
+IMAGE_FSTYPES_append_jetson-tx2 = " tegraflash"
 
 MAGOS_GRAPHICS ?= "packagegroup-magos-graphics"
 MAGOS_GRAPHICS_jetson-tx1 = "packagegroup-magos-graphics nvgstplayer nvgstcapture gstreamer1.0-plugins-bad-faad \
+                             tegra-mmapi-samples"
+MAGOS_GRAPHICS_jetson-tx2 = "packagegroup-magos-graphics nvgstplayer nvgstcapture gstreamer1.0-plugins-bad-faad \
                              tegra-mmapi-samples"
 
 IMAGE_INSTALL = " \
@@ -30,6 +33,7 @@ inherit core-image
 
 EXTRA_IMAGECMD_append_ext4 = " -O ^flex_bg,^metadata_csum,^64bit,^extra_isize"
 SDCARD_GENERATION_COMMAND_jetson-tx1 = "generate_jetson_sdcard"
+SDCARD_GENERATION_COMMAND_jetson-tx2 = "generate_jetson_sdcard"
 
 generate_jetson_sdcard() {
     SDCARD_SIZE=$(expr ${IMAGE_ROOTFS_ALIGNMENT} \+ ${ROOTFS_SIZE} \+ ${IMAGE_ROOTFS_ALIGNMENT})
