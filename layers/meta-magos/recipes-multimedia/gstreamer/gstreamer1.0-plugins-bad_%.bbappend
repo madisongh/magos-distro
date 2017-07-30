@@ -1,2 +1,4 @@
 PACKAGECONFIG_append_tegra210 = " faad"
+PACKAGECONFIG_append_tegra186 = " faad"
 PACKAGE_ARCH_tegra210 = "${SOC_FAMILY_PKGARCH}"
+PACKAGE_ARCH_tegra186 = "${SOC_FAMILY_PKGARCH}"
