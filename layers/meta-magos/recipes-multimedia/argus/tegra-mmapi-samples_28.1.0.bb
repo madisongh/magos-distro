@@ -72,4 +72,4 @@ do_install() {
 }
 
 FILES_${PN} += "/opt/tegra-mmapi"
-RDEPENDS_${PN} += "tegra-libraries-libv4l-plugins cuda-toolkit"
+RDEPENDS_${PN} += "tegra-libraries-libv4l-plugins"

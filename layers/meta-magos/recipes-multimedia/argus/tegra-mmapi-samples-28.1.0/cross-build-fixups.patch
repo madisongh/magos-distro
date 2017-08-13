@@ -59,4 +59,5 @@ Index: tegra_multimedia_api/samples/Rules.mk
 -
 -LDFLAGS += \
  	-lpthread -lv4l2 -lEGL -lGLESv2 -lX11 \
- 	-lnvbuf_utils -lnvjpeg -lnvosd -ldrm
+-	-lnvbuf_utils -lnvjpeg -lnvosd -ldrm
++	-lnvbuf_utils -lnvjpeg -lnvosd -ldrm -ldrm-tegra
