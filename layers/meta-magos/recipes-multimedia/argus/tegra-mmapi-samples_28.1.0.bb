@@ -13,7 +13,7 @@ SRC_URI[sha256sum] = "2ab4f598edf305e37f4087d4a7afe5321d251d976c3299e865d59143c3
 COMPATIBLE_MACHINE = "(tegra186|tegra210)"
 PACKAGE_ARCH = "${SOC_FAMILY_PKGARCH}"
 
-DEPENDS = "libdrm tegra-mmapi tegra-libraries virtual/egl virtual/libgles1 virtual/libgles2 jpeg expat gstreamer1.0 glib-2.0 v4l-utils tensorrt opencv coreutils-native"
+DEPENDS = "libdrm tegra-mmapi tegra-libraries virtual/egl virtual/libgles1 virtual/libgles2 jpeg expat gstreamer1.0 glib-2.0 v4l-utils tensorrt cudnn opencv coreutils-native"
 
 LIC_FILES_CHKSUM = "file://LICENSE;md5=60ad17cc726658e8cf73578bea47b85f \
 		    file://argus/LICENSE.TXT;md5=271791ce6ff6f928d44a848145021687"
