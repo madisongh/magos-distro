@@ -1,0 +1,1 @@
+../../../repos/meta-openembedded/meta-oe/classes/dos2unix.bbclass
