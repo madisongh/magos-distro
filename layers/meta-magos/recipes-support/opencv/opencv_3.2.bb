@@ -1,1 +1,0 @@
-../../../../repos/meta-openembedded/meta-oe/recipes-support/opencv/opencv_3.2.bb
