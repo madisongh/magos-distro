@@ -1,6 +1,3 @@
-FILESEXTRAPATHS_prepend := "${THISDIR}/${BPN}:"
-SRC_URI_append_aarch64 = " file://avoid-getrandom-on-old-kernels.patch"
-TARGET_CFLAGS_append_aarch64 = " -DAVOID_GETRANDOM"
 FILES_${PN}-pam = "${base_libdir}/security"
 RRECOMMENDS_${PN} += "${PN}-pam"
 RRECOMMENDS_udev += "udev-hwdb"
