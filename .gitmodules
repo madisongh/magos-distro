@@ -5,7 +5,7 @@
 [submodule "meta-openembedded"]
 	path = repos/meta-openembedded
 	url = git://git.openembedded.org/meta-openembedded
-	branch = master
+	branch = rocko
 [submodule "repos/meta-tegra"]
 	path = repos/meta-tegra
 	url = https://github.com/madisongh/meta-tegra
@@ -17,4 +17,4 @@
 [submodule "repos/meta-linaro"]
 	path = repos/meta-linaro
 	url = https://git.linaro.org/openembedded/meta-linaro.git
-	branch = master
+	branch = rocko
