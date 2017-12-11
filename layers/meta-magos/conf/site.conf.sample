@@ -1,8 +1,8 @@
 SCONF_VERSION = "1"
 ACCEPT_FSL_EULA = "1"
 
-MN_MIRRORPATH ?= "file:///archive/distros/${DISTRO}"
-SSTATE_MIRRORDIR ?= "${MN_MIRRORPATH}/sstate_mirror"
+MN_MIRRORPATH ?= "file:///archive/distros"
+SSTATE_MIRRORDIR ?= "${MN_MIRRORPATH}/${DISTRO}/sstate_mirror"
 DOWNLOADS_MIRRORDIR ?= "${MN_MIRRORPATH}/downloads"
 
 SSTATE_MIRRORS ?= "\
