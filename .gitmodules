@@ -13,7 +13,3 @@
 [submodule "repos/meta-freescale"]
 	path = repos/meta-freescale
 	url = https://github.com/madisongh/meta-freescale
-[submodule "repos/meta-linaro"]
-	path = repos/meta-linaro
-	url = https://git.linaro.org/openembedded/meta-linaro.git
-	branch = master
