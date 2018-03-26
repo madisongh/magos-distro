@@ -24,6 +24,6 @@ LABEL primary
 EOF
 }
 
-FILES_kernel-image += "/${KERNEL_IMAGEDEST}/extlinux"
+FILES_${KERNEL_PACKAGE_NAME}-image += "/${KERNEL_IMAGEDEST}/extlinux"
 
 do_preconfigure[dirs] = "${B}"
