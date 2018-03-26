@@ -53,7 +53,7 @@ do_compile() {
 }
 
 do_install() {
-    oe_runmake -C ${S}/argus "DESTDIR=${D}" install
+    DESTDIR="${D}" cmake --build '${B}/argus' --target ${OECMAKE_TARGET_INSTALL}
     install -d ${D}/opt/tegra-mmapi
     cp -R --preserve=mode,timestamps ${S}/data ${D}/opt/tegra-mmapi/
     install -d ${D}/opt/tegra-mmapi/bin
@@ -61,14 +61,18 @@ do_install() {
     install -m 0755 ${S}/samples/01_video_encode/video_encode ${D}/opt/tegra-mmapi/bin/
     install -m 0755 ${S}/samples/02_video_dec_cuda/video_dec_cuda ${D}/opt/tegra-mmapi/bin/
     install -m 0755 ${S}/samples/03_video_cuda_enc/video_cuda_enc ${D}/opt/tegra-mmapi/bin/
+    install -m 0755 ${S}/samples/04_video_dec_trt/video_dec_trt ${D}/opt/tegra-mmapi/bin/
     install -m 0755 ${S}/samples/05_jpeg_encode/jpeg_encode ${D}/opt/tegra-mmapi/bin/
     install -m 0755 ${S}/samples/06_jpeg_decode/jpeg_decode ${D}/opt/tegra-mmapi/bin/
     install -m 0755 ${S}/samples/07_video_convert/video_convert ${D}/opt/tegra-mmapi/bin/
-    install -m 0755 ${S}/samples/09_camera_jpeg_capture/camera_jpeg_capture ${D}/opt/tegra-mmapi/bin/
+    install -m 0755 ${S}/samples/08_video_dec_drm/video_dec_drm ${D}/opt/tegra-mmapi/bin/
     install -m 0755 ${S}/samples/09_camera_jpeg_capture/camera_jpeg_capture ${D}/opt/tegra-mmapi/bin/
     install -m 0755 ${S}/samples/10_camera_recording/camera_recording ${D}/opt/tegra-mmapi/bin/
-    install -m 0755 ${S}/samples/11_camera_object_identification/camera_caffe ${D}/opt/tegra-mmapi/bin/
+    install -m 0755 ${S}/samples/12_camera_v4l2_cuda/camera_v4l2_cuda ${D}/opt/tegra-mmapi/bin/
+    install -m 0755 ${S}/samples/13_multi_camera/multi_camera ${D}/opt/tegra-mmapi/bin/
     install -m 0755 ${S}/samples/backend/backend ${D}/opt/tegra-mmapi/bin/
+    install -m 0755 ${S}/samples/frontend/frontend ${D}/opt/tegra-mmapi/bin/
+    install -m 0755 ${S}/samples/v4l2cuda/capture-cuda ${D}/opt/tegra-mmapi/bin/
 }
 
 FILES_${PN} += "/opt/tegra-mmapi"
