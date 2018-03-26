@@ -25,7 +25,7 @@ Index: tegra_multimedia_api/samples/Rules.mk
  # Location of the target rootfs
  ifeq ($(shell uname -m), aarch64)
  TARGET_ROOTFS :=
-@@ -62,49 +53,18 @@ CLASS_DIR 	:= $(TOP_DIR)/samples/common/
+@@ -62,48 +53,16 @@ CLASS_DIR 	:= $(TOP_DIR)/samples/common/
  ALGO_CUDA_DIR 	:= $(TOP_DIR)/samples/common/algorithm/cuda
  ALGO_TRT_DIR 	:= $(TOP_DIR)/samples/common/algorithm/trt
  
@@ -60,32 +60,35 @@ Index: tegra_multimedia_api/samples/Rules.mk
  	-I"$(TOP_DIR)/include" \
  	-I"$(TOP_DIR)/include/libjpeg-8b" \
  	-I"$(ALGO_CUDA_DIR)" \
- 	-I"$(ALGO_TRT_DIR)" \
+-	-I"$(ALGO_TRT_DIR)" \
 -	-I"$(TARGET_ROOTFS)/$(CUDA_PATH)/include" \
 -	-I"$(TARGET_ROOTFS)/usr/include/$(TEGRA_ARMABI)" \
- 	-I"$(TARGET_ROOTFS)/usr/include/libdrm"
+-	-I"$(TARGET_ROOTFS)/usr/include/libdrm"
++	-I"$(ALGO_TRT_DIR)"
  
  # All common dependent libraries
  LDFLAGS += \
  	-lpthread -lv4l2 -lEGL -lGLESv2 -lX11 \
--	-lnvbuf_utils -lnvjpeg -lnvosd -ldrm \
-+	-lnvbuf_utils -lnvjpeg -lnvosd -ldrm -ldrm-tegra \
+ 	-lnvbuf_utils -lnvjpeg -lnvosd -ldrm \
  	-lcuda -lcudart \
- 	-lnvinfer -lnvparsers \
- 	-lopencv_objdetect \
+-	-lnvinfer -lnvparsers \
 -	-L"$(TARGET_ROOTFS)/$(CUDA_PATH)/lib64" \
 -	-L"$(TARGET_ROOTFS)/usr/lib/$(TEGRA_ARMABI)" \
 -	-L"$(TARGET_ROOTFS)/usr/lib/$(TEGRA_ARMABI)/tegra"
++	-lnvinfer -lnvparsers
 Index: tegra_multimedia_api/samples/v4l2cuda/Makefile
 ===================================================================
 --- tegra_multimedia_api.orig/samples/v4l2cuda/Makefile
 +++ tegra_multimedia_api/samples/v4l2cuda/Makefile
-@@ -41,7 +41,7 @@ capture.o: capture.cpp
+@@ -28,10 +28,7 @@ SRCS := \
  
- yuv2rgb.o: yuv2rgb.cu
- 	@echo "Compiling: $<"
--	$(NVCC) $(ALL_CPPFLAGS) $(GENCODE_FLAGS) -c $<
-+	$(NVCC) $(NVCCFLAGS) $(ALL_CPPFLAGS) $(GENCODE_FLAGS) -c $<
+ ALL_CPPFLAGS := $(addprefix -Xcompiler ,$(filter-out -std=c++11, $(CPPFLAGS)))
  
- $(APP): capture.o yuv2rgb.o
- 	@echo "Linking: $@"
+-# CUDA code generation flags
+-GENCODE_SM53 := -gencode arch=compute_53,code=sm_53
+-GENCODE_SM62 := -gencode arch=compute_62,code=sm_62
+-GENCODE_FLAGS := $(GENCODE_SM53) $(GENCODE_SM62)
++GENCODE_FLAGS := $(NVCCFLAGS)
+ 
+ all: $(APP)
+ 

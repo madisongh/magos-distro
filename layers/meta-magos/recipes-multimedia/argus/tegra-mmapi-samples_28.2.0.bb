@@ -2,17 +2,15 @@ DESCRIPTION = "NVIDIA Tegra Multimedia API headers and examples"
 HOMEPAGE = "http://developer.nvidia.com"
 LICENSE = "Proprietary & BSD"
 
-SRC_URI = "http://developer.download.nvidia.com/devzone/devcenter/mobile/jetpack_l4t/3.2/pwv346/JetPackL4T_32_b157/Tegra_Multimedia_API_R${PV}_aarch64.tbz2 \
+SRC_URI = "http://developer.download.nvidia.com/devzone/devcenter/mobile/jetpack_l4t/3.2GA/m892ki/JetPackL4T_32_b196/Tegra_Multimedia_API_R${PV}_aarch64.tbz2 \
            file://remove-xxd-reference.patch \
            file://jpeg-fixups.patch \
            file://cross-build-fixups.patch \
 "
-SRC_URI[md5sum] = "37a9ea02c920071fd1ca1f38162e23a0"
-SRC_URI[sha256sum] = "537801eee0cd51657f729869a669c2618d5789f0fb7d05c2b43c06cab4135a20"
+SRC_URI[md5sum] = "8fd01257b3102f406498f534eddbb313"
+SRC_URI[sha256sum] = "66d80fd782063914e29776d3e341a81e8c7863b5c173cef01d5bf58ad03e1f92"
 COMPATIBLE_MACHINE = "(tegra186|tegra210)"
 PACKAGE_ARCH = "${SOC_FAMILY_PKGARCH}"
-
-PR = "rc0"
 
 DEPENDS = "libdrm tegra-mmapi libdrm-tegra virtual/egl virtual/libgles1 virtual/libgles2 jpeg expat gstreamer1.0 glib-2.0 v4l-utils tensorrt cudnn opencv coreutils-native"
 
@@ -41,16 +39,17 @@ do_configure() {
 }
 
 do_compile() {
-    oe_runmake -C ${S}/argus
+    VERBOSE=1 cmake --build '${B}/argus' -- ${EXTRA_OECMAKE_BUILD}
     export CPP=`echo ${CXX} | sed -e's, .*,,'`
     CXX_EXTRA=`echo ${CXX} | sed -e's,^[^ ]*,,'`
     export CUDA_PATH=${STAGING_DIR_NATIVE}/usr/local/cuda-9.0
     PATH=$CUDA_PATH/bin:$PATH
     export CPPFLAGS="${CXX_EXTRA} ${CXXFLAGS} -std=c++11 -I${STAGING_DIR_TARGET}/usr/local/cuda-9.0/include"
+    CPPFLAGS="$CPPFLAGS `pkg-config --cflags libdrm`"
     export LDFLAGS="-L${STAGING_DIR_TARGET}/usr/local/cuda-9.0/lib ${LDFLAGS}"
     export CFLAGS="${CFLAGS} `pkg-config --cflags opencv`"
     CCBIN=`which $CPP`
-    oe_runmake -j1 all TEGRA_ARMABI=${TARGET_ARCH} TARGET_ROOTFS=${STAGING_DIR_TARGET} NVCC=nvcc NVCCFLAGS="--shared -ccbin=${CCBIN} --std=c++11 ${CUDA_NVCC_FLAGS}" GENCODE_FLAGS=""
+    oe_runmake -j1 all TEGRA_ARMABI=${TARGET_ARCH} TARGET_ROOTFS=${STAGING_DIR_TARGET} NVCC=nvcc NVCCFLAGS="--shared -ccbin=${CCBIN} --std=c++11"
 }
 
 do_install() {
