@@ -14,7 +14,7 @@ PACKAGE_ARCH = "${SOC_FAMILY_PKGARCH}"
 
 DEPENDS = "libdrm tegra-mmapi libdrm-tegra virtual/egl virtual/libgles1 virtual/libgles2 jpeg expat gstreamer1.0 glib-2.0 v4l-utils tensorrt cudnn opencv coreutils-native"
 
-LIC_FILES_CHKSUM = "file://LICENSE;md5=60ad17cc726658e8cf73578bea47b85f \
+LIC_FILES_CHKSUM = "file://LICENSE;md5=2174e6214d83da8e19ab6510ffa71336 \
 		    file://argus/LICENSE.TXT;md5=271791ce6ff6f928d44a848145021687"
 
 PACKAGECONFIG ??= "${@bb.utils.contains('DISTRO_FEATURES', 'x11', 'x11', '', d)}"
