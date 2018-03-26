@@ -5,8 +5,10 @@ LICENSE = "MIT"
 IMAGE_FEATURES += "ssh-server-dropbear package-management hwcodecs"
 
 MAGOS_GRAPHICS ?= "packagegroup-magos-graphics"
-MAGOS_GRAPHICS_jetson-tx1 = "packagegroup-magos-graphics nvgstplayer nvgstcapture gstreamer1.0-plugins-bad-faad"
-MAGOS_GRAPHICS_jetson-tx2 = "packagegroup-magos-graphics nvgstplayer nvgstcapture gstreamer1.0-plugins-bad-faad"
+MAGOS_GRAPHICS_jetson-tx1 = "packagegroup-magos-graphics nvgstplayer nvgstcapture gstreamer1.0-plugins-bad-faad \
+                             tegra-mmapi-samples"
+MAGOS_GRAPHICS_jetson-tx2 = "packagegroup-magos-graphics nvgstplayer nvgstcapture gstreamer1.0-plugins-bad-faad \
+                             tegra-mmapi-samples"
 
 IMAGE_INSTALL = " \
     packagegroup-magos-base \
